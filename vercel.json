@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "api/app.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/predict",
+        "dest": "/api/app.py",
+        "methods": ["POST"]
+      },
+      {
+        "src": "/health",
+        "dest": "/api/app.py",
+        "methods": ["GET"]
+      }
+    ]
+  }
