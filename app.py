@@ -9,7 +9,7 @@ app = Flask(__name__)
 # Load the model and scaler
 model = pickle.load(open('model.pkl', 'rb'))
 scaler = pickle.load(open('scaler.pkl', 'rb'))
-@app.route('/home', methods = ['GET'])
+@app.route('/', methods = ['GET'])
 def home():
     return render_template('index.html')
 @app.route('/predict', methods=['POST'])
