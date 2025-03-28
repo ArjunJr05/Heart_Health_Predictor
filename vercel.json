@@ -2,19 +2,24 @@
     "version": 2,
     "builds": [
       {
-        "src": "api/app.py",
+        "src": "app.py",
         "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/predict",
-        "dest": "/api/app.py",
+        "dest": "app.py",
         "methods": ["POST"]
       },
       {
         "src": "/health",
-        "dest": "/api/app.py",
+        "dest": "app.py",
+        "methods": ["GET"]
+      },
+      {
+        "src": "/",
+        "dest": "app.py",
         "methods": ["GET"]
       }
     ]
